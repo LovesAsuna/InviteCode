@@ -25,7 +25,7 @@ shadowJar {
     configurations = [project.configurations.compile]
 }
 
-defaultTasks("shadowjar")
+defaultTasks("copyFile")
 
 dependencies {
     compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
@@ -47,13 +47,11 @@ tasks.withType(JavaCompile) {
     options.compilerArgs.add('-Xlint:unchecked')
 }
 
-task copyFile(type: Copy) {
-    doLast {
-        from('build/libs/')
-        into('E:/work/1.15.2test/plugins/')
-        include('InviteCode*.jar')
-        rename {
-            "InviteCode.jar"
-        }
+task copyFile(type: Copy,dependsOn: shadowJar) {
+    from('build/libs/')
+    into('E:/work/1.15.2test/plugins/')
+    include('InviteCode*.jar')
+    rename {
+        "InviteCode.jar"
     }
 }
