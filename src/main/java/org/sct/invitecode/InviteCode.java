@@ -1,36 +1,37 @@
 package org.sct.invitecode;
 
+import lombok.Getter;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.sct.invitecode.commands.CommandHandler;
+import org.sct.invitecode.commands.SubCommandHandler;
 import org.sct.invitecode.data.InviteCodeData;
 import org.sct.invitecode.file.*;
 import org.sct.invitecode.listener.Register;
 import org.sct.invitecode.util.JudgeDependencies;
 import org.sct.invitecode.util.JudgeStorge;
+import org.sct.plugincore.PluginCore;
+import org.sct.plugincore.PluginCoreAPI;
 import org.sct.plugincore.util.plugin.CheckUpdate;
 import org.sct.plugincore.util.plugin.FileUpdate;
 
 public class InviteCode extends JavaPlugin {
+    @Getter
     public static InviteCode instance;
-    private String storgetype;
-
-    public static InviteCode getInstance() {
-        return instance;
-    }
+    @Getter
+    private static PluginCoreAPI pluginCoreAPI;
 
     @Override
     public void onEnable() {
         instance = this;
-
+        pluginCoreAPI = PluginCore.getPluginCoreAPI();
         InviteCodeData.getPool().submit(() -> {
             FileUpdate.update(instance, "config.yml", getDataFolder().getPath());
             FileUpdate.update(instance, "lang.yml", getDataFolder().getPath());
-            CheckUpdate.check(Bukkit.getConsoleSender(), instance);
+            CheckUpdate.check(Bukkit.getConsoleSender(), instance, "LovesAsuna", "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==");
         });
-        Bukkit.getPluginCommand("InviteCode").setExecutor(new CommandHandler());
+        Bukkit.getPluginCommand("InviteCode").setExecutor(new SubCommandHandler(instance, "InviteCode"));
 
         if (Bukkit.getPluginManager().isPluginEnabled("Authme")) {
             Bukkit.getPluginManager().registerEvents(new Register(), this);
