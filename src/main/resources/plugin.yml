@@ -1,0 +1,12 @@
+name: InviteCode
+author: icestar
+version: 2.5.2-Release
+api-version: 1.13
+main: org.sct.invitecode.InviteCode
+depend: [PluginCore]
+description: "简易邀请码插件"
+commands:
+  InviteCode:
+    usage: "/InviteCode"
+    aliases: [InviteCode,ic]
+    description: "使用邀请码"

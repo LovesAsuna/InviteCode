@@ -1,0 +1,26 @@
+InviteCode:
+  # 默认30分钟
+  Delay: 30
+  Authme: false
+  # mysql yaml
+  storge: yaml
+  mySQLHost: 127.0.0.1
+  mySQLPort: 3306
+  mySQLUsername: root
+  mySQLPassword: 123456
+  mySQLDatabase: invitecode
+  mySQLTablename: ic
+  Times:
+    1:
+      Reward:
+        - 1
+      # 如果不使用Money请保持数值为0
+      Money: 0
+      # 如果不使用PlayerPoints请保持数值为0
+      Points: 0
+    2:
+      Reward:
+        - 2
+      Money: 0
+      Points: 0
+

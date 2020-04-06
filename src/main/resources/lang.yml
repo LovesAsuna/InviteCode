@@ -1,0 +1,27 @@
+#语言文件配置
+Language:
+  #指令帮助
+  CommandHelp:
+    - "&a==================&7[&eInviteCode&7]&a=================="
+    - "&b/ic help &7- &e显示插件帮助"
+    - "&b/ic reload &7- &e重载插件"
+    - "&b/ic create &7- &e创建一组邀请码"
+    - "&b/ic reward [code] &7- &e输入邀请码获得奖励"
+    - "&b/ic show &7- &e查看奖品"
+    - "&b/ic check &7- &e查看自己的邀请码"
+    - "&a=============================================="
+  #仅OP可见
+  OPCommandHelp:
+    - "&b/ic reward [code] &7- &e输入邀请码获得奖励(OP可绕过同名限制)"
+    - "&b/ic reset [ID] &7- &e重置该玩家的时间"
+    - "&b/ic check (ID)&7- &e查看邀请码"
+    - "&b/ic storge &7- &e查看数据储存方式"
+    - "&b/ic saveitem &7- &e保存手持物品作为奖励物品名"
+  #没有权限
+  NoPermission: "&7[&eInviteCode&7]&c你没有权限操作"
+  #指令参数错误
+  CommandError: "&7[&eInviteCode&7]&c你输入的命令不正确!"
+  #重载成功
+  Reload: "&7[&eInviteCode&7]&2插件配置重载成功"
+  #创建收费锁成功
+  Create: "&7[&eInviteCode&7]&2邀请码创建成功"
