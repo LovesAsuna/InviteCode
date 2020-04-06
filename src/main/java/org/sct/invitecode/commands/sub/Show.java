@@ -4,7 +4,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.sct.invitecode.data.InviteCodeData;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
+
+import java.util.Map;
 
 public class Show implements SubCommand {
     @Override
@@ -19,5 +21,10 @@ public class Show implements SubCommand {
         Inventory inv = InviteCodeData.getGui().setGUI(player);
         player.openInventory(inv);
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        return null;
     }
 }

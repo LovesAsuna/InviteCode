@@ -13,7 +13,9 @@ import org.sct.invitecode.file.Config;
 import org.sct.invitecode.file.Items;
 import org.sct.invitecode.file.Offline;
 import org.sct.invitecode.file.Times;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
+
+import java.util.Map;
 
 
 public class Reward implements SubCommand {
@@ -108,6 +110,11 @@ public class Reward implements SubCommand {
         /*刷新初始时间*/
         InviteCodeData.getTimer().put(player.getName() + "start", System.currentTimeMillis() / 1000);
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        return null;
     }
 
     @SuppressWarnings("deprecation")

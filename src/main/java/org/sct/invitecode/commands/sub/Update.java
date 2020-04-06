@@ -1,13 +1,14 @@
 package org.sct.invitecode.commands.sub;
 
+import com.google.common.collect.Maps;
 import org.bukkit.command.CommandSender;
 import org.sct.invitecode.InviteCode;
 import org.sct.invitecode.data.InviteCodeData;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
 import org.sct.plugincore.util.plugin.DownloadUtil;
-import org.sct.plugincore.util.plugin.GetUpdateDetail;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class Update implements SubCommand {
 
@@ -21,7 +22,7 @@ public class Update implements SubCommand {
             if (args.length == 2 && args[1].equalsIgnoreCase("download")) {
                 InviteCodeData.getPool().submit(() -> {
                     try {
-                        DownloadUtil.download(sender, InviteCode.getInstance());
+                        DownloadUtil.download(sender, InviteCode.getInstance(), "LovesAsuna");
                         sender.sendMessage("§7[§eInviteCode§7]§2下载成功");
                     } catch (IOException e) {
                         sender.sendMessage("§7[§eInviteCode§7]§c下载更新时出错");
@@ -31,7 +32,7 @@ public class Update implements SubCommand {
             } else if (args.length == 2 && args[1].equalsIgnoreCase("version")) {
                 InviteCodeData.getPool().submit(() -> {
                     try {
-                        GetUpdateDetail.get(sender, InviteCode.getInstance());
+                        InviteCode.getPluginCoreAPI().getGitHubAPI().getUpdateDetail(sender, InviteCode.getInstance(), "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -40,5 +41,12 @@ public class Update implements SubCommand {
 
         }
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        Map<Integer, String[]> params = Maps.newHashMap();
+        params.put(1, new String[]{"download", "version"});
+        return params;
     }
 }

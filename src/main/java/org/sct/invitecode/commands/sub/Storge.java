@@ -3,8 +3,9 @@ package org.sct.invitecode.commands.sub;
 import org.bukkit.command.CommandSender;
 import org.sct.invitecode.data.InviteCodeData;
 import org.sct.invitecode.storge.Yaml;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
 
+import java.util.Map;
 
 public class Storge implements SubCommand {
     @Override
@@ -19,5 +20,10 @@ public class Storge implements SubCommand {
             sender.sendMessage("§7[§eInviteCode§7]§c你没有此命令的权限!");
         }
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        return null;
     }
 }

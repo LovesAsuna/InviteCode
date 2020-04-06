@@ -3,7 +3,9 @@ package org.sct.invitecode.commands.sub;
 import org.bukkit.command.CommandSender;
 import org.sct.invitecode.InviteCode;
 import org.sct.invitecode.file.*;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
+
+import java.util.Map;
 
 public class Reload implements SubCommand {
     @Override
@@ -21,5 +23,10 @@ public class Reload implements SubCommand {
             sender.sendMessage("§7[§eInviteCode§7]§c你没有此命令的权限!");
         }
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        return null;
     }
 }

@@ -3,7 +3,9 @@ package org.sct.invitecode.commands.sub;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.sct.invitecode.data.InviteCodeData;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
+
+import java.util.Map;
 
 /**
  * @author icestar
@@ -29,6 +31,11 @@ public class Check implements SubCommand {
             return true;
         }
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        return null;
     }
 
 }

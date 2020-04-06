@@ -3,7 +3,9 @@ package org.sct.invitecode.commands.sub;
 import org.bukkit.command.CommandSender;
 import org.sct.invitecode.enumeration.LangType;
 import org.sct.invitecode.file.Lang;
-import org.sct.plugincore.util.function.SubCommand;
+import org.sct.plugincore.util.function.command.SubCommand;
+
+import java.util.Map;
 
 public class Help implements SubCommand {
     @Override
@@ -30,5 +32,10 @@ public class Help implements SubCommand {
         }
 
         return true;
+    }
+
+    @Override
+    public Map<Integer, String[]> getParams() {
+        return null;
     }
 }
