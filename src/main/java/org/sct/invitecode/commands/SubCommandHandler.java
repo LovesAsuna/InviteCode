@@ -18,7 +18,7 @@ public class SubCommandHandler extends CommandHandler {
         registerSubCommand("info", new Info());
         registerSubCommand("reload", new Reload());
         registerSubCommand("reset", new Reset());
-        registerSubCommand("Reward", new Reward());
+        registerSubCommand("reward", new Reward());
         registerSubCommand("saveitem", new SaveItem());
         registerSubCommand("show", new Show());
         registerSubCommand("storge", new Storge());

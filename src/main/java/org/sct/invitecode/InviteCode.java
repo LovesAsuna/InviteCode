@@ -9,6 +9,7 @@ import org.sct.invitecode.file.*;
 import org.sct.invitecode.listener.Register;
 import org.sct.invitecode.util.JudgeDependencies;
 import org.sct.invitecode.util.JudgeStorge;
+import org.sct.invitecode.util.ListenerManager;
 import org.sct.plugincore.PluginCore;
 import org.sct.plugincore.PluginCoreAPI;
 import org.sct.plugincore.util.function.econoomy.EcoUtil;
@@ -32,6 +33,7 @@ public class InviteCode extends JavaPlugin {
         });
         Bukkit.getPluginCommand("InviteCode").setExecutor(new SubCommandHandler(instance, "InviteCode"));
 
+        ListenerManager.register();
         if (Bukkit.getPluginManager().isPluginEnabled("Authme")) {
             Bukkit.getPluginManager().registerEvents(new Register(), this);
         }
