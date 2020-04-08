@@ -1,9 +1,7 @@
 package org.sct.invitecode;
 
 import lombok.Getter;
-import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.sct.invitecode.commands.SubCommandHandler;
 import org.sct.invitecode.data.InviteCodeData;
@@ -13,6 +11,7 @@ import org.sct.invitecode.util.JudgeDependencies;
 import org.sct.invitecode.util.JudgeStorge;
 import org.sct.plugincore.PluginCore;
 import org.sct.plugincore.PluginCoreAPI;
+import org.sct.plugincore.util.function.econoomy.EcoUtil;
 import org.sct.plugincore.util.plugin.CheckUpdate;
 import org.sct.plugincore.util.plugin.FileUpdate;
 
@@ -36,7 +35,8 @@ public class InviteCode extends JavaPlugin {
         if (Bukkit.getPluginManager().isPluginEnabled("Authme")) {
             Bukkit.getPluginManager().registerEvents(new Register(), this);
         }
-        if (!initVault()) {
+
+        if (!EcoUtil.loadVault()) {
             getLogger().severe("Vault初始化失败,可能未安装Vault");
             getLogger().severe("或未使用相应的经济插件!");
             getLogger().severe("只能使用普通的物品奖励功能!");
@@ -76,15 +76,4 @@ public class InviteCode extends JavaPlugin {
         }
     }
 
-    private boolean initVault() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            return false;
-        }
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) {
-            return false;
-        }
-        InviteCodeData.setEcon(rsp.getProvider());
-        return InviteCodeData.getEcon() != null;
-    }
 }

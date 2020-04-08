@@ -32,7 +32,7 @@ public class Update implements SubCommand {
             } else if (args.length == 2 && args[1].equalsIgnoreCase("version")) {
                 InviteCodeData.getPool().submit(() -> {
                     try {
-                        InviteCode.getPluginCoreAPI().getGitHubAPI().getUpdateDetail(sender, InviteCode.getInstance(), "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==");
+                        InviteCode.getPluginCoreAPI().getGitHubAPI().getUpdateDetail(sender, InviteCode.getInstance(), "LovesAsuna", "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
