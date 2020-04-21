@@ -12,7 +12,6 @@ import org.sct.invitecode.util.JudgeStorge;
 import org.sct.invitecode.util.ListenerManager;
 import org.sct.plugincore.PluginCore;
 import org.sct.plugincore.PluginCoreAPI;
-import org.sct.plugincore.util.function.econoomy.EcoUtil;
 import org.sct.plugincore.util.plugin.CheckUpdate;
 import org.sct.plugincore.util.plugin.FileUpdate;
 
@@ -38,7 +37,7 @@ public class InviteCode extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new Register(), this);
         }
 
-        if (!EcoUtil.loadVault()) {
+        if (!InviteCode.getPluginCoreAPI().getEcoAPI().loadVault()) {
             getLogger().severe("Vault初始化失败,可能未安装Vault");
             getLogger().severe("或未使用相应的经济插件!");
             getLogger().severe("只能使用普通的物品奖励功能!");
