@@ -25,7 +25,9 @@ public class PlayerJoin implements Listener {
                 e.getPlayer().sendMessage("§7[§eInviteCode§7]§b你不在的时候有新玩家进服");
                 e.getPlayer().sendMessage("§7[§eInviteCode§7]§b后使用了你的邀请码!");
                 InviteCodeData.getOfflinelist().remove(playername);
-                Offline.SaveOfflinePlayer();
+                Offline.saveOfflinePlayer();
+            } else {
+                continue;
             }
 
             Player rplayer = Bukkit.getPlayerExact(pn);

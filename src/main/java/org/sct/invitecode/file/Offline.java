@@ -20,7 +20,7 @@ public class Offline {
         offline = YamlConfiguration.loadConfiguration(file);
     }
 
-    public static void SaveOfflinePlayer() {
+    public static void saveOfflinePlayer() {
         loadOffline();
         offline.set("offline", InviteCodeData.getOfflinelist());
         try {

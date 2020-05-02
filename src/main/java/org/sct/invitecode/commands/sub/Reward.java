@@ -125,7 +125,7 @@ public class Reward implements SubCommand {
         /*不在线状况*/
         if (player == null) {
             InviteCodeData.getOfflinelist().add(playername);
-            Offline.SaveOfflinePlayer();
+            Offline.saveOfflinePlayer();
             online = false;
         }
         return online;

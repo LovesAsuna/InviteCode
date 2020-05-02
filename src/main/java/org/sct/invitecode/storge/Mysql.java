@@ -9,11 +9,6 @@ public class Mysql extends Storge {
     private Connection conn = null;
 
     public Mysql() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         InviteCode.getInstance().getServer().getConsoleSender().sendMessage("§7[§eInviteCode§7]§aMysql数据库连接实例化中...");
         String database = InviteCode.getInstance().getConfig().getString("InviteCode.mySQLDatabase");
         String tablename = InviteCode.getInstance().getConfig().getString("InviteCode.mySQLTablename");
