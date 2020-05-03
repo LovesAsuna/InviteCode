@@ -17,6 +17,7 @@ class Reward : SubCommand {
     private var starttime: Long = 0
     private var endtime: Long = 0
     private val delay = Config.getInt(ConfigType.DELAY)
+    @Suppress("deprecation")
     override fun execute(sender: CommandSender, args: Array<String>): Boolean {
         if (args.size == 1) {
             return false
@@ -108,7 +109,7 @@ class Reward : SubCommand {
         val player = Bukkit.getPlayerExact(playername!!)
         /*不在线状况*/
         if (player == null) {
-            InviteCodeData.offlinelist!!.add(playername!!)
+            InviteCodeData.offlinelist!!.add(playername)
             Offline.saveOfflinePlayer()
             online = false
         }
