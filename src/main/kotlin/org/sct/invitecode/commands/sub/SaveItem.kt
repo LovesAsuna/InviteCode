@@ -7,6 +7,7 @@ import org.sct.plugincore.util.function.command.SubCommand
 
 class SaveItem : SubCommand {
     private var itemcount = 0
+    @Suppress("deprecation")
     override fun execute(sender: CommandSender, args: Array<String>): Boolean {
         if (sender is Player) {
             val player = sender
