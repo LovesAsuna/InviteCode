@@ -1,6 +1,5 @@
 package org.sct.invitecode;
 
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.sct.invitecode.commands.SubCommandHandler;
@@ -16,16 +15,14 @@ import org.sct.plugincore.util.plugin.CheckUpdate;
 import org.sct.plugincore.util.plugin.FileUpdate;
 
 public class InviteCode extends JavaPlugin {
-    @Getter
     public static InviteCode instance;
-    @Getter
     private static PluginCoreAPI pluginCoreAPI;
 
     @Override
     public void onEnable() {
         instance = this;
         pluginCoreAPI = PluginCore.getPluginCoreAPI();
-        InviteCodeData.getPool().submit(() -> {
+        InviteCodeData.INSTANCE.getPool().submit(() -> {
             FileUpdate.update(instance, "config.yml", getDataFolder().getPath());
             FileUpdate.update(instance, "lang.yml", getDataFolder().getPath());
             CheckUpdate.check(Bukkit.getConsoleSender(), instance, "LovesAsuna", "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==");
@@ -73,8 +70,15 @@ public class InviteCode extends JavaPlugin {
 
         /*存入离线玩家*/
         for (String list : Offline.getOfflinePlayer()) {
-            InviteCodeData.getOfflinelist().add(list);
+            InviteCodeData.INSTANCE.getOfflinelist().add(list);
         }
     }
 
+    public static InviteCode getInstance() {
+        return instance;
+    }
+
+    public static PluginCoreAPI getPluginCoreAPI() {
+        return pluginCoreAPI;
+    }
 }

@@ -1,6 +1,5 @@
 package org.sct.invitecode.file;
 
-import lombok.Getter;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.sct.invitecode.InviteCode;
 
@@ -10,7 +9,6 @@ import java.io.IOException;
 public class Times {
 
     private static File file;
-    @Getter
     private static YamlConfiguration times;
 
     public static void loadTimes() {
@@ -28,5 +26,9 @@ public class Times {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static YamlConfiguration getTimes() {
+        return times;
     }
 }

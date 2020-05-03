@@ -7,10 +7,10 @@ import org.sct.invitecode.file.Config;
 public class JudgeDependencies {
     public static void useDenpendencies() {
         if (Config.getInt(ConfigType.MONEY) != 0) {
-            InviteCodeData.setUseVault(true);
+            InviteCodeData.INSTANCE.setUseVault(true);
         }
         if (Config.getBoolean(ConfigType.Authme)) {
-            InviteCodeData.setUseAuthme(true);
+            InviteCodeData.INSTANCE.setUseAuthme(true);
         }
     }
 
