@@ -1,9 +1,9 @@
 package org.sct.invitecode.commands.sub
 
 import org.bukkit.command.CommandSender
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.data.InviteCodeData
 import org.sct.invitecode.storge.Yaml
-import org.sct.plugincore.util.function.command.SubCommand
 
 class Storge : SubCommand {
     override fun execute(sender: CommandSender, args: Array<String>): Boolean {

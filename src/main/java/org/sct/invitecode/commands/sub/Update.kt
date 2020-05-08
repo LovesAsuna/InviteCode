@@ -2,9 +2,9 @@ package org.sct.invitecode.commands.sub
 
 import com.google.common.collect.Maps
 import org.bukkit.command.CommandSender
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.InviteCode
 import org.sct.invitecode.data.InviteCodeData
-import org.sct.plugincore.util.function.command.SubCommand
 import java.io.IOException
 
 class Update : SubCommand {
@@ -15,13 +15,13 @@ class Update : SubCommand {
         if (args.size == 2) {
             if (args.size == 2 && args[1].equals("download", ignoreCase = true)) {
                 InviteCodeData.pool?.submit {
-                    InviteCode.getPluginCoreAPI().gitHubAPI.download(sender, InviteCode.getInstance(), "LovesAsuna")
+                    InviteCode.getEasyLibAPI().gitHubAPI.download(sender, InviteCode.getInstance(), "LovesAsuna")
                     sender.sendMessage("§7[§eInviteCode§7]§2下载成功")
                 }
             } else if (args.size == 2 && args[1].equals("version", ignoreCase = true)) {
                 InviteCodeData.pool?.submit {
                     try {
-                        InviteCode.getPluginCoreAPI().gitHubAPI.getUpdateDetail(sender, InviteCode.getInstance(), "LovesAsuna", "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==")
+                        InviteCode.getEasyLibAPI().gitHubAPI.getUpdateDetail(sender, InviteCode.getInstance(), "LovesAsuna", "ZDRlZWY4ZDZlMzIyNDExYjk3NThlMGNiN2ZmYzg3NTRiOGIwZDUzZA==")
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }

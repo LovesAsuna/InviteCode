@@ -20,11 +20,11 @@ public class PlayerJoin implements Listener {
     @SuppressWarnings("deprecation")
     public void onJoin(PlayerJoinEvent e) {
         playername = e.getPlayer().getName();
-        for (String pn : InviteCodeData.INSTANCE.getOfflinelist()) {
+        for (String pn : InviteCodeData.getOfflinelist()) {
             if (playername.equalsIgnoreCase(pn)) {
                 e.getPlayer().sendMessage("§7[§eInviteCode§7]§b你不在的时候有新玩家进服");
                 e.getPlayer().sendMessage("§7[§eInviteCode§7]§b后使用了你的邀请码!");
-                InviteCodeData.INSTANCE.getOfflinelist().remove(playername);
+                InviteCodeData.getOfflinelist().remove(playername);
                 Offline.saveOfflinePlayer();
             } else {
                 continue;
@@ -42,12 +42,12 @@ public class PlayerJoin implements Listener {
                 }
             }
             //给钱
-            if (InviteCodeData.INSTANCE.getEcon() != null && InviteCode.getInstance().getConfig().getInt("InviteCode.Money") != 0) {
+            if (InviteCodeData.getEcon() != null && InviteCode.getInstance().getConfig().getInt("InviteCode.Money") != 0) {
                 OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(e.getPlayer().getName());
                 double money = InviteCode.getInstance().getConfig().getInt("InviteCode.Money");
                 e.getPlayer().sendMessage("§7[§eInviteCode§7]§b获得货币" + money);
-                InviteCodeData.INSTANCE.getEcon().depositPlayer(offlinePlayer, money);
-                e.getPlayer().sendMessage("§7[§eInviteCode§7]§b当前余额为" + InviteCodeData.INSTANCE.getEcon().getBalance(e.getPlayer()));
+                InviteCodeData.getEcon().depositPlayer(offlinePlayer, money);
+                e.getPlayer().sendMessage("§7[§eInviteCode§7]§b当前余额为" + InviteCodeData.getEcon().getBalance(e.getPlayer()));
             }
             //给点券
             if (Bukkit.getPluginManager().isPluginEnabled("PlayerPoints") && InviteCode.getInstance().getConfig().getInt("InviteCode.Points") != 0) {

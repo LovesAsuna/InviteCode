@@ -22,7 +22,7 @@ public class Offline {
 
     public static void saveOfflinePlayer() {
         loadOffline();
-        offline.set("offline", InviteCodeData.INSTANCE.getOfflinelist());
+        offline.set("offline", InviteCodeData.getOfflinelist());
         try {
             offline.save(file);
         } catch (IOException e) {

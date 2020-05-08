@@ -2,8 +2,8 @@ package org.sct.invitecode.commands.sub
 
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.file.Items
-import org.sct.plugincore.util.function.command.SubCommand
 
 class SaveItem : SubCommand {
     private var itemcount = 0

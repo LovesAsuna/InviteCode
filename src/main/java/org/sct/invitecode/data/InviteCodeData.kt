@@ -13,30 +13,38 @@ import kotlin.collections.HashMap
 
 object InviteCodeData {
     /*计时器*/
+    @JvmStatic
     var Timer: MutableMap<String, Long>? = null
 
     /*注册*/
+    @JvmStatic
     var register: MutableMap<String, Boolean>? = null
 
     /*储存离线玩家列表*/
+    @JvmStatic
     var offlinelist: MutableList<String>? = null
 
     /*依赖启动状态*/
+    @JvmStatic
     var useVault = false
 
+    @JvmStatic
     var useAuthme = false
 
     /*经济依赖*/
+    @JvmStatic
     var econ: Economy? = null
 
     /*数据库*/
+    @JvmStatic
     var storge: Storge? = null
 
-
     /*gui*/
+    @JvmStatic
     var gui: gui? = null
 
     /*插件专用线程池*/
+    @JvmStatic
     var pool: ThreadPoolExecutor? = null
 
     fun getplayername(playername: String?): String {

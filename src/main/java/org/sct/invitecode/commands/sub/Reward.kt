@@ -4,6 +4,7 @@ import fr.xephi.authme.api.v3.AuthMeApi
 import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.InviteCode
 import org.sct.invitecode.data.InviteCodeData
 import org.sct.invitecode.enumeration.ConfigType
@@ -11,7 +12,6 @@ import org.sct.invitecode.file.Config
 import org.sct.invitecode.file.Items
 import org.sct.invitecode.file.Offline
 import org.sct.invitecode.file.Times
-import org.sct.plugincore.util.function.command.SubCommand
 
 class Reward : SubCommand {
     private var starttime: Long = 0

@@ -1,9 +1,9 @@
 package org.sct.invitecode.commands.sub
 
 import org.bukkit.command.CommandSender
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.InviteCode
 import org.sct.invitecode.file.*
-import org.sct.plugincore.util.function.command.SubCommand
 
 class Reload : SubCommand {
     override fun execute(sender: CommandSender, args: Array<String>): Boolean {

@@ -1,9 +1,8 @@
 package org.sct.invitecode.commands.sub
 
 import org.bukkit.command.CommandSender
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.data.InviteCodeData
-import org.sct.plugincore.util.function.command.SubCommand
-import java.util.HashMap
 
 class Reset : SubCommand {
     override fun execute(sender: CommandSender, args: Array<String>): Boolean {

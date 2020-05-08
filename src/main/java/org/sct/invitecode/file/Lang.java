@@ -1,9 +1,9 @@
 package org.sct.invitecode.file;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.sct.easylib.util.BasicUtil;
 import org.sct.invitecode.InviteCode;
 import org.sct.invitecode.enumeration.LangType;
-import org.sct.plugincore.util.BasicUtil;
 
 import java.io.File;
 import java.util.List;

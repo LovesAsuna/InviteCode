@@ -14,6 +14,6 @@ public class JudgeStorge {
         } else if (Config.getString(ConfigType.STORGE).equalsIgnoreCase("mysql")) {
             storgetype = "mysql";
         }
-        InviteCodeData.INSTANCE.setStorge(storgetype.equalsIgnoreCase("yaml") ? new Yaml() : new Mysql());
+        InviteCodeData.setStorge(storgetype.equalsIgnoreCase("yaml") ? new Yaml() : new Mysql());
     }
 }

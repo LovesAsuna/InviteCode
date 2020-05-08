@@ -2,9 +2,9 @@ package org.sct.invitecode.commands.sub
 
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.sct.easylib.util.function.command.SubCommand
 import org.sct.invitecode.data.InviteCodeData
 import org.sct.invitecode.util.CreateInviteCode
-import org.sct.plugincore.util.function.command.SubCommand
 
 class Create : SubCommand {
     override fun execute(sender: CommandSender, args: Array<String>): Boolean {
