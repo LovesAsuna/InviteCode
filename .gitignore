@@ -27,7 +27,8 @@ hs_err_pid*
 
 # Cusom
 src/test
-.idea
-build
-.gradle
-
+src/main/resources/rebel.xml
+out/
+.idea/
+build/
+.gradle/
