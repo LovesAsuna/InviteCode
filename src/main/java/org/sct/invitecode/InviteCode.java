@@ -11,7 +11,7 @@ import org.sct.invitecode.data.InviteCodeData;
 import org.sct.invitecode.file.*;
 import org.sct.invitecode.listener.Register;
 import org.sct.invitecode.util.JudgeDependencies;
-import org.sct.invitecode.util.JudgeStorge;
+import org.sct.invitecode.util.DBUtil;
 import org.sct.invitecode.util.ListenerManager;
 
 public class InviteCode extends JavaPlugin {
@@ -63,7 +63,7 @@ public class InviteCode extends JavaPlugin {
         reloadConfig();
 
         /*判断数据储存方式*/
-        JudgeStorge.whichStorge();
+        DBUtil.whichStorge();
 
         /*判断依赖是否启用*/
         JudgeDependencies.useDenpendencies();

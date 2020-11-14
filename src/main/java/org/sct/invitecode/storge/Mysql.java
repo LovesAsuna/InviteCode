@@ -71,7 +71,7 @@ public class Mysql extends Storge {
     }
 
     @Override
-    public String readplayer(String ic) {
+    public String readPlayer(String ic) {
         String playername = null;
         sql = "select player,ic from ic where ic = " + "\"" + ic + "\"";
         try {

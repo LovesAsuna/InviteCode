@@ -46,7 +46,7 @@ dependencies {
 }
 
 group = 'org.sct'
-version = '2.5.2-Release'
+version = '2.5.4-Release'
 description = 'InviteCode'
 sourceCompatibility = '1.8'
 

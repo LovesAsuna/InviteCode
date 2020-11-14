@@ -4,38 +4,31 @@ import org.sct.invitecode.file.Code;
 
 
 public class Yaml extends Storge {
+    private final String playerPath = "InviteCode.Player.";
 
     @Override
     public void storge(String player, String ic) {
-        Code.saveCode("InviteCode.Player." + player, ic);
+        Code.saveCode(playerPath + player, ic);
     }
 
     @Override
-    public String readplayer(String ic) {
-        String invitecode = null;
-        String path = null;
+    public String readPlayer(String ic) {
+        String invitecode;
         String playername = null;
-        for (String p : Code.getCode().getKeys(true)) {
-            invitecode = Code.getCode().getString(p);
-            if (invitecode == null) {
-                continue;
-            } else if (invitecode.equals(ic)) {
-                path = p;
+        for (String p : Code.getCode().getConfigurationSection("InviteCode.Player").getKeys(false)) {
+            invitecode = Code.getCode().getString(playerPath + p);
+            if (ic.equals(invitecode)) {
+                playername = p;
                 break;
             }
-        }
-        if (path == null) {
-            playername = null;
-        } else {
-            playername = path.split("\\.")[2];
         }
         return playername;
     }
 
     @Override
     public String read(String player) {
-        String ic = null;
-        ic = Code.getCode().getString("InviteCode.Player." + player);
+        String ic;
+        ic = Code.getCode().getString(playerPath + player);
         return ic;
     }
 }

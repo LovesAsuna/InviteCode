@@ -13,7 +13,7 @@ class Show : SubCommand {
         }
         val player = sender
         player.closeInventory()
-        val inv = InviteCodeData.gui?.setGUI(player)
+        val inv = InviteCodeData.gui.setGUI(player)
         player.openInventory(inv!!)
         return true
     }

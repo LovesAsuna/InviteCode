@@ -6,7 +6,10 @@ import org.sct.invitecode.file.Config;
 import org.sct.invitecode.storge.Mysql;
 import org.sct.invitecode.storge.Yaml;
 
-public class JudgeStorge {
+/**
+ * @author LovesAsuna
+ */
+public class DBUtil {
     public static void whichStorge() {
         String storgetype = null;
         if (Config.getString(ConfigType.STORGE).equalsIgnoreCase("yaml")) {
@@ -14,6 +17,6 @@ public class JudgeStorge {
         } else if (Config.getString(ConfigType.STORGE).equalsIgnoreCase("mysql")) {
             storgetype = "mysql";
         }
-        InviteCodeData.setStorge(storgetype.equalsIgnoreCase("yaml") ? new Yaml() : new Mysql());
+        InviteCodeData.setStorge("yaml".equalsIgnoreCase(storgetype) ? new Yaml() : new Mysql());
     }
 }

@@ -2,15 +2,14 @@ package org.sct.invitecode.storge;
 
 public abstract class Storge {
 
-    public void storge(String player, String ic) {
-    }
+    public abstract void storge(String player, String ic);
 
-    public String read(String player) {
-        return null;
-    }
+    public abstract String read(String player);
 
-    public String readplayer(String ic) {
-        return null;
-    }
+    /**
+     * @param ic 邀请码
+     * @return 该邀请码的拥有者
+     **/
+    public abstract String readPlayer(String ic);
 
 }

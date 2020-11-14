@@ -20,7 +20,7 @@ class Check : SubCommand {
             val playername = args[1]
             if (sender.hasPermission("ic.checkothers") || sender.isOp) {
                 sender.sendMessage("§7[§eInviteCode§7]§b你输入的玩家ID为$playername")
-                sender.sendMessage("§7[§eInviteCode§7]§b" + "玩家" + InviteCodeData.getplayername(playername) + "的邀请码为: " + InviteCodeData.storge?.read(InviteCodeData.getplayername(playername)))
+                sender.sendMessage("§7[§eInviteCode§7]§b" + "玩家" + InviteCodeData.getPlayerName(playername) + "的邀请码为: " + InviteCodeData.storge?.read(InviteCodeData.getPlayerName(playername)))
             } else {
                 sender.sendMessage("§7[§eInviteCode§7]§c你没有此命令的权限!")
             }

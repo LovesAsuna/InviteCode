@@ -12,7 +12,7 @@ import org.sct.invitecode.file.Times;
 import java.util.HashMap;
 import java.util.Map;
 
-public class gui {
+public class Gui {
     private static int slot;
     private Map<Integer, Integer> slot_item = new HashMap<>();
 
