@@ -1,6 +1,6 @@
 name: InviteCode
 author: icestar
-version: 2.5.2-Release
+version: 2.5.4-Release
 api-version: 1.13
 main: org.sct.invitecode.InviteCode
 depend: [EasyLib]
